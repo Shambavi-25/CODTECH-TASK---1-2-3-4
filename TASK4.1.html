@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR/VR Application UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AR/VR Interface</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#controls">Gesture Controls</a></li>
+                <li><a href="#environment">3D Environment</a></li>
+                <li><a href="#interaction">Interactive UI</a></li>
+                <li><a href="#voice">Voice Commands</a></li>
+                <li><a href="#haptic">Haptic Feedback</a></li>
+                <li><a href="#multiplayer">Multiplayer Interaction</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Immersive AR/VR UI</h1>
+        <p>Explore an intuitive virtual experience with gesture, voice, and haptic controls.</p>
+        <a href="#controls" class="btn">Start Exploring</a>
+    </section>
+
+    <section id="controls" class="content">
+        <h2>Gesture-Based Controls</h2>
+        <p>Use hand gestures to interact with the virtual space.</p>
+        <ul>
+            <li>✋ Swipe to navigate</li>
+            <li>🤏 Pinch to select</li>
+            <li>👆 Tap to interact</li>
+            <li>🖐️ Wave to open the menu</li>
+        </ul>
+    </section>
+
+    <section id="environment" class="content">
+        <h2>3D Virtual Environment</h2>
+        <p>Move freely in a 360-degree space using intuitive controls.</p>
+        <div class="vr-scene">🌍 [VR Scene Placeholder]</div>
+    </section>
+
+    <section id="interaction" class="content">
+        <h2>Interactive UI Elements</h2>
+        <p>Engage with floating menus, holographic buttons, and dynamic objects.</p>
+        <button class="holo-btn">Open Virtual Menu</button>
+    </section>
+
+    <section id="voice" class="content">
+        <h2>Voice Commands</h2>
+        <p>Control the interface with voice interactions.</p>
+        <button onclick="activateVoice()" class="btn">Activate Voice Control</button>
+        <div id="voice-response"></div>
+    </section>
+
+    <section id="haptic" class="content">
+        <h2>Haptic Feedback</h2>
+        <p>Feel the virtual world with realistic haptic responses.</p>
+        <button onclick="simulateHaptic()" class="btn">Test Haptic Feedback</button>
+    </section>
+
+    <section id="multiplayer" class="content">
+        <h2>Multiplayer Interaction</h2>
+        <p>Connect with other users in a shared virtual space.</p>
+        <button onclick="connectMultiplayer()" class="btn">Join Multiplayer Mode</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AR/VR Interface. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+
+        function activateVoice() {
+            const responses = ["Opening menu...", "Navigating to home...", "Adjusting environment...", "Activating gesture control..."];
+            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+            document.getElementById("voice-response").innerText = "Voice Command: " + randomResponse;
+        }
+
+        function simulateHaptic() {
+            alert("Haptic feedback simulated! (In real implementation, this would trigger a vibration or tactile response)");
+        }
+
+        function connectMultiplayer() {
+            alert("Connecting to multiplayer mode... (This would establish a VR session with other users)");
+        }
+    </script>
+</body>
+</html>
