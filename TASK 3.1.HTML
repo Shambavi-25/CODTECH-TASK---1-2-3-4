@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify UI Redesign</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Spotify Redesign</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#playlists">Playlists</a></li>
+                <li><a href="#folders">Playlist Folders</a></li>
+                <li><a href="#recommendations">AI Suggestions</a></li>
+                <li><a href="#now-playing">Now Playing</a></li>
+                <li><a href="#social">Social Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Redesigned Spotify UI</h1>
+        <p>Better playlist management with smart folders and AI suggestions.</p>
+        <a href="#playlists" class="btn">Explore Now</a>
+    </section>
+
+    <section id="playlists" class="content">
+        <h2>Your Playlists</h2>
+        <div class="grid">
+            <div class="card" style="background-color: #ff6b6b;">Workout Mix</div>
+            <div class="card" style="background-color: #6b95ff;">Chill Vibes</div>
+            <div class="card" style="background-color: #6bff95;">Party Hits</div>
+        </div>
+    </section>
+
+    <section id="folders" class="content">
+        <h2>Playlist Folders</h2>
+        <div class="grid">
+            <div class="folder">🎵 Favorite Hits</div>
+            <div class="folder">💪 Workout Tracks</div>
+            <div class="folder">🎉 Party Mode</div>
+        </div>
+    </section>
+
+    <section id="recommendations" class="content">
+        <h2>AI-Powered Recommendations</h2>
+        <p>Our smart AI suggests new playlists based on your listening habits.</p>
+        <button onclick="generateSuggestion()" class="btn">Get Suggestions</button>
+        <div id="suggestion-result"></div>
+    </section>
+
+    <section id="now-playing" class="content">
+        <h2>Now Playing</h2>
+        <div class="now-playing-container">
+            <p><strong>Currently Playing:</strong> <span id="current-song">No song playing</span></p>
+            <button onclick="playNextSong()" class="btn">Next Song</button>
+        </div>
+    </section>
+
+    <section id="social" class="content">
+        <h2>Social Features</h2>
+        <p>Connect with friends and see what they are listening to!</p>
+        <div class="grid">
+            <div class="card">🎧 John's Playlist</div>
+            <div class="card">🎼 Sarah's Vibes</div>
+            <div class="card">🎵 Alex's Hits</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Spotify Redesign. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+
+        function generateSuggestion() {
+            const suggestions = ["Indie Chill", "Top 100 Hits", "Jazz Classics", "Electronic Beats", "Lofi Beats", "Hip Hop Essentials"];
+            const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+            document.getElementById("suggestion-result").innerText = "Try this: " + randomSuggestion;
+        }
+
+        function playNextSong() {
+            const songs = ["Song 1 - Artist A", "Song 2 - Artist B", "Song 3 - Artist C", "Song 4 - Artist D"];
+            const randomSong = songs[Math.floor(Math.random() * songs.length)];
+            document.getElementById("current-song").innerText = randomSong;
+        }
+    </script>
+</body>
+</html>
